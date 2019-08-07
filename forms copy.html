@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+    <!--<link rel="stylesheet" type="text/css" href="assets/datepicker/jquery-ui-1.12.1.custom/jquery-ui.min.css">-->
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+	<title>test</title>
+	<!--<link rel="stylesheet" type="text/css" href="teststyle.css">-->
+	<title>forms</title>
+</head>
+<body>
+	 <nav class="navbar navbar-expand-lg navbar-light bg-light rounded container ">
+		<a class="navbar-brand" href="#">Form validation</a>
+	 </nav>
+     <div class="container">
+
+     	<div class="PX-5">
+     		<div class="form-group" autocomplete="off">
+		<div class="row justify-content-center">
+           <div class="col-md-5 p-2 ">
+			<label class="mr-3">Name: <span class="text-danger">*</span> </label>
+			<input type="text" class="p-3 form-control rounded-0  w-100" placeholder="Name" id="name" autocomplete="on">
+			<div class="invalid-feedback"> <sapn>Please enter valid name. </sapn> </div>
+           </div>
+		</div>
+		
+		<div class="row justify-content-center">
+            <div class="col-md-5 p-2">
+			<label class="mr-3">Email: <span class="text-danger">*</span> </label>
+			<input type="text" class="p-3 form-control rounded-0 border-clr" placeholder="email" id="email" autocomplete="on">
+			<div class="invalid-feedback"> <span>Please enter valid email.</span></div>
+            </div>
+		</div>
+		<div class="row justify-content-center">
+          <div class="col-md-5 p-2">
+          	<label class="mr-3">Address: <span class="text-danger">*</span> </label>
+			<input type="text" class="p-3 form-control rounded-0" placeholder="Address" id="address" autocomplete="on">
+			<div class="invalid-feedback"> <span>Please enter valid Address.</span> </div>
+          </div>
+		</div>
+		<div class="row justify-content-center">
+          <div class="col-md-5 p-2">
+          	<label class="mr-3">Date of Birth: <span class="text-danger">*</span> </label>
+			<input class="p-3 form-control rounded-0" id="dob" placeholder="dd/mm/yyyy" type="text" autocomplete="off">
+			 <div class="invalid-feedback"> <sapn>Please enter valid DOB. </sapn></div>
+          </div>
+      </div>
+      <div class="row justify-content-center">
+          <div class="col-md-5 p-2">
+          	<label class="mr-3">Age: </label><div class="checked form-control rounded-0" id="age"></div></div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-5 p-2">
+          	<label class="mr-3">Aadhar number: <span class="text-danger">*</span> </label>
+			<input type="text" class="p-3 form-control rounded-0" placeholder="aadhar" id="aadhar" autocomplete="on">
+			 <div class="invalid-feedback"> <span>Please enter valid Aadhar number.</span></div>
+          </div>
+      </div>
+      <div class="row justify-content-center">
+          <div class="col-md-5 p-2">
+          	<label class="mr-3">Pan number: <span class="text-danger">*</span> </label>
+			<input type="text" class="p-3 form-control rounded-0" placeholder="Pan number" id="pancard" autocomplete="on">
+			 <div class="invalid-feedback"> <sapn>Please enter valid Pan number.</sapn></div>
+          </div>
+		</div>
+		dfgdfgdsfgd
+        <div class="row justify-content-center">
+        	<div class="col-md-5 p-2">
+        	<div class="form-check">
+		      <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
+		      <label class="form-check-label" for="invalidCheck">
+		        Agree to terms and conditions
+		      </label>
+		      <div class="invalid-feedback">
+		        You must agree before submitting.
+		      </div>
+		    </div>
+        </div>
+        </div>
+       <!--<input id="dob-datepicker" placeholder="dd/mm/yyyy" name="dob-datepicker" type="text">
+       <div class="checked" id="age"></div>-->
+
+		<div class="row justify-content-center">
+           <div class="p-2">
+			<button id="submit-btn">Submit</button>
+           </div>
+		</div>
+	    </div>
+     	</div>
+     </div>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+     <script src="validator.min.js"></script>	
+      <!--<script type="text/javascript" src="assets/datepicker/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+     <script type="text/javascript" src="assets/datepicker/jquery-ui-1.12.1.custom/jquery.js"></script>-->
+    <script type="text/javascript">
+	$('#submit-btn').on('click', function(){
+
+		var name = $('#name').val();
+		var nameFlag = false;
+		var phone = $('#phone').val();
+		var phoneFlag = false;
+		var email = $('#email').val();
+		var emailFlag = false;
+		var address = $('#address').val();
+		var addressFlag = false;
+		var dob = $ ('#dob').val();
+		var dobFlag = false;
+		var aadhar = $('#aadhar').val();
+		var aadharFlag = false;
+		var pancard = $('#pancard').val();
+		var pancardFlag = false;
+		var invalidCheck = $ ('#invalidCheck').val();
+		var invalidCheckFlag = false;
+		
+
+        
+		$('#name, #phone, #email, #address, #dob, #aadhar, #pancard, #invalidCheck').removeClass('is-invalid');
+
+		if(name.match(/^[A-Za-z][A-Za-z\s\.]+$/)){
+			nameFlag = true;
+		}
+		else{
+			$('#name').addClass('is-invalid');
+		}
+        //phone number
+		if(phone.match(/^[0-9]{10}$/)){
+			phoneFlag = true;
+		}
+		else{
+			$('#phone').addClass('is-invalid');
+		}
+        //email 
+		if(email.match(/^[A-Za-z0-9][A-Za-z0-9\.\-\_]+@[A-Za-z][A-Za-z\.]+[A-Za-z]+$/)){
+			emailFlag = true;
+		}
+		else{
+			$('#email').addClass('is-invalid');
+		}
+        //address
+        if(address.match(/^[#.0-9a-zA-Z\s,-]+$/)){
+			addressFlag = true;
+		}
+		else{
+			$('#address').addClass('is-invalid');
+		}
+		//dob
+        if(dob.match(/^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/)){
+			dobFlag = true;
+		}
+		else{
+			$('#dob').addClass('is-invalid');
+		}
+        //aadhar number
+        if(aadhar.match(/^\d{4}\s\d{4}\s\d{4}$/)){
+			aadharFlag = true;
+		}
+		else{
+			$('#aadhar').addClass('is-invalid');
+		}
+		//pan card 
+		if(pancard.match(/^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/)){
+			pancardFlag = true;
+		}
+		else{
+			$('#pancard').addClass('is-invalid');
+		}
+		//checkbox
+		if($('#invalidCheck').prop('checked')){
+			invalidCheckFlag = true;
+		}
+		else{
+			$('#invalidCheck').addClass('is-invalid');
+		}
+        //clear fields
+             //$('input[type="text"]').val('');
+             //$('#invalidCheck').prop('checked', false);
+             //$('#dob').val('');
+             
+
+		if(nameFlag && phoneFlag && emailFlag && addressFlag && dobFlag && aadharFlag && pancardFlag){
+			$.post("http://192.168.1.88/post-server.php",
+				{
+				    name: name,
+				    phone: phone,
+				    email: email,
+				    address: address,
+				    dob: dob,
+				    aadhar: aadhar,
+				    pancard: pancard
+				},
+				
+				function(data, status){
+			     //alert("Data: " + data + "\nStatus: " + status);
+			    if(data == 'PASS'){
+			    	$('.form-group').find('input:text').val(''); 
+             		$('input:checkbox').removeAttr('checked');
+             		$('#age').html('');
+			    }
+			    else{
+			    	alert('failed');
+			    }
+			    //console.log('post');{
+			    	//isPost = 1;
+			    // }
+			});
+		}
+	});
+</script>
+<script type="text/javascript">
+	$('#dob').datepicker({
+    onSelect: function(value, ui) {
+        var today = new Date(),
+            age = today.getFullYear() - ui.selectedYear;
+        $('#age').text(age);
+                                                                          
+    },
+    maxDate: '+0d',
+    changeMonth: true,
+    changeYear: true,
+    defaultDate: '-18yr',
+    dateFormat: 'dd/mm/yy',
+});
+</script>
+
+</body>
+</html>
